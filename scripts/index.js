@@ -25,4 +25,3 @@ class Articulo{
     }
 }
 const producto1 = new Articulo ("Placa de video rtx 3060", "MSI", "135000",54);
-
