@@ -1,3 +1,35 @@
+.articles-container {
+  margin-top: 5%;
+  width: 80vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  -webkit-column-gap: 8%;
+          column-gap: 8%;
+  row-gap: 8%;
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.articles-container .item-container {
+  width: 100%;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.articles-container .item-container a {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+
+.articles-container .item-container img {
+  width: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,16 +48,45 @@ body {
           flex-direction: column;
 }
 
-body h1 {
+body .head-container {
+  margin-bottom: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .head-container h1 {
+  width: 30%;
   text-align: center;
 }
 
+body .head-container img {
+  width: 6%;
+  border-radius: 100%;
+}
+
 body .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   background-color: #EA7258;
   height: 5vh;
 }
 
 body .navbar .items-menu {
+  width: 100%;
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,6 +94,7 @@ body .navbar .items-menu {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  text-transform: uppercase;
 }
 
 body .navbar .items-menu a {
@@ -41,7 +103,8 @@ body .navbar .items-menu a {
 }
 
 body footer {
-  background-color: grey;
+  color: white;
+  background-color: #a0a0a0;
   height: 5vh;
   margin-top: auto;
   text-align: center;

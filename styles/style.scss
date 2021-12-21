@@ -1,3 +1,5 @@
+@import '_articulos';
+
 $colorHeader: #EA7258;
 $colorFondo: #FFFFFF;
 * {
@@ -10,16 +12,35 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    h1{
-        text-align: center;
+
+    .head-container{
+        margin-bottom: 2vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        h1{
+            width: 30%;
+            text-align: center;
+        }
+        img{
+            width: 6%;
+            border-radius: 100%;
+
+        }
     }
     .navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
         background-color: $colorHeader;
         height: 5vh;
         .items-menu{
+            width: 100%;
             list-style-type: none;
             display: flex;
             justify-content: space-evenly;
+            text-transform: uppercase;
             a{
                 text-decoration: none;
                 color: black;
@@ -27,7 +48,8 @@ body{
         }
     }
     footer{
-        background-color: grey;
+        color: white;
+        background-color: rgb(160, 160, 160);
         height: 5vh;
         margin-top: auto;
         text-align: center;
