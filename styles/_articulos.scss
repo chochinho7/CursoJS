@@ -8,11 +8,30 @@
     row-gap: 8%;
     align-self: center;
      
+    #boton-compra{
+        border: none;
+        color: #ffffff;
+        font-family: 'PT Sans Narrow',sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        list-style: none;
+        text-decoration: none;
+        text-indent: 0;
+        background-color: rgb(36, 112, 199);
+        padding: 8px;
+        border-radius: 4px;
+        box-shadow: black 20px solid ;
+        
+        &:hover{
+            background-color: rgb(22, 77, 139);
+        }
+    }
     .item-container{
         width: 100%;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
 
         a{
+            display: block;
             text-decoration: none;
             color: black;
             cursor: default;
