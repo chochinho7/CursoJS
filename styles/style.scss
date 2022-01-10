@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shizuru&display=swap');
 @import '_articulos';
-
+@import '_cart';
 $colorHeader: #000000;
 $colorFondo: #FFFFFF;
 * {
@@ -37,6 +37,7 @@ body{
         align-items: center;
         justify-content: space-evenly;
         height: 5vh;
+        background-color: black;
         .items-menu{
             width: 100%;
             list-style-type: none;

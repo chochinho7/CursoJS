@@ -1,6 +1,11 @@
+.body-cont{
+    display: flex;
+    justify-content: space-between;
+}
 .articles-container{
     margin-top: 5%;
-    width: 80vw;
+    margin-left: 10%;
+    width: 60vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(6, 1fr);

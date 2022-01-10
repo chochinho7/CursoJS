@@ -1,8 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shizuru&display=swap");
+.body-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .articles-container {
   margin-top: 5%;
-  width: 80vw;
+  margin-left: 10%;
+  width: 60vw;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[5];
@@ -51,6 +61,72 @@
 
 .articles-container .item-container img {
   width: 100%;
+}
+
+.cart-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20vw;
+  border: black 1px solid;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10%;
+}
+
+.cart-menu h2 {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.cart-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-item img {
+  width: 20%;
+}
+
+.cart-item p {
+  text-align: center;
+}
+
+.cart-list {
+  margin-top: 20%;
+  margin-left: 5%;
+}
+
+.btn-mas {
+  border-radius: 2px;
+  border: none;
+  background-color: #2886f1;
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.btn-menos {
+  border-radius: 2px;
+  border: none;
+  background-color: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+h3 {
+  margin-left: 5%;
+}
+
+.cart-price {
+  margin-left: 5%;
 }
 
 * {
@@ -106,6 +182,7 @@ body .navbar {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: 5vh;
+  background-color: black;
 }
 
 body .navbar .items-menu {
