@@ -26,7 +26,7 @@
       align-self: center;
 }
 
-.articles-container #boton-compra {
+.articles-container .btn-compra {
   border: none;
   color: #ffffff;
   font-family: 'PT Sans Narrow',sans-serif;
@@ -42,7 +42,7 @@
           box-shadow: black 20px solid;
 }
 
-.articles-container #boton-compra:hover {
+.articles-container .btn-compra:hover {
   background-color: #164d8b;
 }
 
@@ -63,72 +63,60 @@
   width: 100%;
 }
 
-.cart-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 20vw;
-  border: black 1px solid;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 10%;
-}
+/*.cart-menu {
+    display: flex;
+    width: 20vw;
+    border: black 1px solid;
+    flex-direction: column;
+    gap: 5%;
 
-.cart-menu h2 {
-  margin-top: 5%;
-  margin-left: 5%;
+    h2{
+        margin-top: 5%;
+        margin-left: 5%;
+    }
 }
+.cart-item{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 
-.cart-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    img{
+        width: 50%;
+    }
+    p{
+        text-align: center;
+    }
 }
-
-.cart-item img {
-  width: 20%;
+.cart-list{
+    margin-top: 20%;
+    margin-left: 5%;
 }
-
-.cart-item p {
-  text-align: center;
+.btn-mas{
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(40, 134, 241);
+    color: white;
+    width: 20px;
+    height: 20px;
 }
+.btn-menos{
+    border-radius: 2px;
+    border: none;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
 
-.cart-list {
-  margin-top: 20%;
-  margin-left: 5%;
 }
-
-.btn-mas {
-  border-radius: 2px;
-  border: none;
-  background-color: #2886f1;
-  color: white;
-  width: 20px;
-  height: 20px;
+h3{
+    margin-left: 5%;
 }
-
-.btn-menos {
-  border-radius: 2px;
-  border: none;
-  background-color: red;
-  color: white;
-  width: 20px;
-  height: 20px;
+.cart-price{
+    margin-left: 5%;
 }
-
-h3 {
-  margin-left: 5%;
-}
-
-.cart-price {
-  margin-left: 5%;
-}
-
+.btn-cart{
+    display: flex;
+}*/
 * {
   margin: 0;
   padding: 0;
