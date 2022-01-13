@@ -81,6 +81,17 @@ function refreshNumCart(){
 }
 crearArticulos(productos)
 
-$('.btn').click(function(){
-    alert("aca va a aparecer el carrito.");
+$('.table').hide();
+
+$('.boton-carro').on('click', function(){
+    let text = "";
+    if($('.boton-carro').text() === 'Mostrar Carrito'){
+        $('.table').show(1000);
+        text = 'Ocultar Carrito';
+    }else{
+        $('.table').hide(500);
+        text = 'Mostrar Carrito';
+    }
+
+    $('.boton-carro').html(text);
 })

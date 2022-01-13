@@ -1,14 +1,13 @@
 .body-cont{
     display: flex;
     justify-content: space-between;
+
 }
 .articles-container{
-    margin-top: 5%;
-    margin-left: 10%;
-    width: 60vw;
+    margin: 5%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     column-gap: 8%;
     row-gap: 8%;
     align-self: center;
@@ -26,6 +25,7 @@
         padding: 8px;
         border-radius: 4px;
         box-shadow: black 20px solid ;
+        width: 50%;
         
         &:hover{
             background-color: rgb(22, 77, 139);
