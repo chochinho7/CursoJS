@@ -1,3 +1,4 @@
+const Productos= []
 var Cart = {
     content: [], 
     owner: '',
@@ -43,7 +44,9 @@ class Articulo{
 
     }
 }
-const productos = [ new Articulo ("RTX 3060", "MSI",'https://asset.msi.com/resize/image/global/product/product_1610444725b6aa81c4e74a8ea9fee28fdd225b58cc.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png', "135000",54), new Articulo ("RTX 3060 TI", "MSI",'https://mexx-img-2019.s3.amazonaws.com/40461_1.jpeg', "185000",50), new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10),new Articulo ("SENTEY K20", "Sentey",'https://d2r9epyceweg5n.cloudfront.net/stores/001/381/842/products/k20_011-adeaaa2dbffd4de97f16100722228928-1024-1024.jpg', "25000",10)];
+const URLGET = "scripts/database.json"
+
+$.get(URLGET, generarArticulos);
 /*<div class="item-container"><img src="link"><a>Nombre del articulo</a><button id="boton-compra">Comprar</button></div> */
 function crearArticulos(articulos){
     for (const articulo of articulos){
@@ -54,38 +57,20 @@ function crearArticulos(articulos){
             console.log(articulo.id);
         })
         
-        /*let crearDiv = document.createElement("div");
-        crearDiv.classList.add('item-container');        
-        let image = document.createElement("img");
-        image.src = articulo.img;
-        crearDiv.appendChild(image);
-        let anchor = document.createElement("a");
-        anchor.innerText = articulo.nombre;
-        crearDiv.appendChild(anchor);
-        let botonCart = document.createElement("button");
-        botonCart.onclick = function(){
-            Cart.addToCart(articulo);
-            refreshNumCart();
-
-        }
-        botonCart.innerText = 'Comprar';
-        botonCart.id = 'boton-compra';
-        crearDiv.appendChild(botonCart);
-        let contenedor = document.querySelector('.articles-container');
-        contenedor.appendChild(crearDiv);*/
     }
 }
 function refreshNumCart(){
     let numCart = document.querySelector('#num-carrito');
     numCart.innerText = Cart.content.length;
 }
-crearArticulos(productos)
+
 
 $('.table').hide();
 
 $('.boton-carro').on('click', function(){
     let text = "";
     if($('.boton-carro').text() === 'Mostrar Carrito'){
+        crearTabla(Cart.content);
         $('.table').show(1000);
         text = 'Ocultar Carrito';
     }else{
@@ -95,3 +80,35 @@ $('.boton-carro').on('click', function(){
 
     $('.boton-carro').html(text);
 })
+
+function crearTabla(carrito){
+    $('.cuerpo-tabla').html('');
+    for(const item of carrito){
+        $('.cuerpo-tabla').append(`                <tr>
+        <td><button class="btn-close"></button></td>
+        <td>${item.marca} ${item.nombre}</td>
+        <td><button class="btn btn-success btn-sm">+</button> 0 <button class="btn btn-primary btn-sm">-</button></td>
+        <td>${item.precio}</td>
+        <td>$0</td>
+      </tr>`)
+
+    }
+    $('.cuerpo-tabla').append(`                <tr>
+    <td>Precio Total:</td>
+    <td>$0</td>
+</tr>
+`)
+}
+
+function generarArticulos(productos, estado){
+    if(estado === "success"){for (const producto of productos){
+       
+        const articuloNuevo =  new Articulo (producto.nombre, producto.marca, producto.urlImg, producto.precio, producto.stock);
+
+        Productos.push(articuloNuevo); 
+        
+    }
+    crearArticulos(Productos)
+}
+}
+
